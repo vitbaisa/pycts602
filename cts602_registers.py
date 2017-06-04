@@ -1,7 +1,9 @@
+#encoding=utf-8
+
 registers = [
   {
     'name': 'Nilan_Bus_Version',
-    'address': '000',
+    'address': 000,
     'scale': '',
     'unit': '',
     'description': 'Protocol version number',
@@ -10,7 +12,7 @@ registers = [
   },
   {
     'name': 'Nilan_App_VersionMajor',
-    'address': '001',
+    'address': 001,
     'scale': '',
     'unit': 'text',
     'description': 'Software version - major (2 character ascii text)',
@@ -19,7 +21,7 @@ registers = [
   },
   {
     'name': 'Nilan_App_VersionMinor',
-    'address': '002',
+    'address': 002,
     'scale': '',
     'unit': 'text',
     'description': 'Software version - minor (2 character ascii text)',
@@ -28,7 +30,7 @@ registers = [
   },
   {
     'name': 'Nilan_App_VersionRelease',
-    'address': '003',
+    'address': 003,
     'scale': '',
     'unit': 'text',
     'description': 'Software version - release (2 character ascii text)',
@@ -37,7 +39,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_UserFunc',
-    'address': '100',
+    'address': 100,
     'scale': '',
     'unit': '',
     'description': 'User function',
@@ -46,7 +48,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_AirFilter',
-    'address': '101',
+    'address': 101,
     'scale': '',
     'unit': '',
     'description': 'Air filter alarm',
@@ -55,7 +57,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_DoorOpen',
-    'address': '102',
+    'address': 102,
     'scale': '',
     'unit': '',
     'description': 'Door contact ',
@@ -64,7 +66,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_Smoke',
-    'address': '103',
+    'address': 103,
     'scale': '',
     'unit': '',
     'description': 'Fire/Smoke alarm',
@@ -73,7 +75,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_MotorThermo',
-    'address': '104',
+    'address': 104,
     'scale': '',
     'unit': '',
     'description': 'Motor thermo fuse ',
@@ -82,7 +84,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_Frost_Overht',
-    'address': '105',
+    'address': 105,
     'scale': '',
     'unit': '',
     'description': 'Heating surface frost / overheat',
@@ -91,7 +93,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_AirFlow',
-    'address': '106',
+    'address': 106,
     'scale': '',
     'unit': '',
     'description': 'Airflow monitor (guard)',
@@ -100,7 +102,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_P_HI',
-    'address': '107',
+    'address': 107,
     'scale': '',
     'unit': '',
     'description': 'High pressure switch',
@@ -109,7 +111,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_P_LO',
-    'address': '108',
+    'address': 108,
     'scale': '',
     'unit': '',
     'description': 'Low pressure switch',
@@ -118,7 +120,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_Boil',
-    'address': '109',
+    'address': 109,
     'scale': '',
     'unit': '',
     'description': 'Hot water boiling',
@@ -127,7 +129,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_3WayPos',
-    'address': '110',
+    'address': 110,
     'scale': '',
     'unit': '',
     'description': 'Hot water 3-way valve position',
@@ -136,7 +138,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_DefrostHG',
-    'address': '111',
+    'address': 111,
     'scale': '',
     'unit': '',
     'description': 'Hotgas defrost type selection',
@@ -145,7 +147,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_Defrost',
-    'address': '112',
+    'address': 112,
     'scale': '',
     'unit': '',
     'description': 'Defrost thermostat',
@@ -154,7 +156,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_UserFunc_2',
-    'address': '113',
+    'address': 113,
     'scale': '',
     'unit': '',
     'description': 'User function 2',
@@ -163,7 +165,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_T0_Controller',
-    'address': '200',
+    'address': 200,
     'scale': '100',
     'unit': '°C',
     'description': 'Controller board temperature',
@@ -172,7 +174,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_T1_Intake',
-    'address': '201',
+    'address': 201,
     'scale': '100',
     'unit': '°C',
     'description': 'Fresh air intake temperature',
@@ -181,7 +183,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_T2_Inlet',
-    'address': '202',
+    'address': 202,
     'scale': '100',
     'unit': '°C',
     'description': 'Inlet temperature (before heater)',
@@ -190,7 +192,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_T3_Exhaust',
-    'address': '203',
+    'address': 203,
     'scale': '100',
     'unit': '°C',
     'description': 'Room exhaust temperature',
@@ -199,7 +201,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_T4_Outlet',
-    'address': '204',
+    'address': 204,
     'scale': '100',
     'unit': '°C',
     'description': 'Outlet temperature',
@@ -208,7 +210,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_T5_Cond',
-    'address': '205',
+    'address': 205,
     'scale': '100',
     'unit': '°C',
     'description': 'Condenser temperature',
@@ -217,7 +219,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_T6_Evap',
-    'address': '206',
+    'address': 206,
     'scale': '100',
     'unit': '°C',
     'description': 'Evaporator temperature',
@@ -226,7 +228,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_T7_Inlet',
-    'address': '207',
+    'address': 207,
     'scale': '100',
     'unit': '°C',
     'description': 'Inlet temperature (after heater)',
@@ -235,7 +237,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_T8_Outdoor',
-    'address': '208',
+    'address': 208,
     'scale': '100',
     'unit': '°C',
     'description': 'Outdoor temperature',
@@ -244,7 +246,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_T9_Heater',
-    'address': '209',
+    'address': 209,
     'scale': '100',
     'unit': '°C',
     'description': 'Heating surface temperature',
@@ -253,7 +255,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_T10_Extem',
-    'address': '210',
+    'address': 210,
     'scale': '100',
     'unit': '°C',
     'description': 'External room temperature',
@@ -262,7 +264,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_T11_Top',
-    'address': '211',
+    'address': 211,
     'scale': '100',
     'unit': '°C',
     'description': 'Hot water top temperature',
@@ -271,7 +273,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_T12_Bottom',
-    'address': '212',
+    'address': 212,
     'scale': '100',
     'unit': '°C',
     'description': 'Hot water bottom temperature',
@@ -280,7 +282,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_T13_Retum',
-    'address': '213',
+    'address': 213,
     'scale': '100',
     'unit': '°C',
     'description': 'EK return temperature',
@@ -289,7 +291,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_T14_Supply',
-    'address': '214',
+    'address': 214,
     'scale': '100',
     'unit': '°C',
     'description': 'EK supply temperature',
@@ -298,7 +300,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_T15_Room',
-    'address': '215',
+    'address': 215,
     'scale': '100',
     'unit': '°C',
     'description': 'User panel room temperature',
@@ -307,7 +309,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_T16',
-    'address': '216',
+    'address': 216,
     'scale': '100',
     'unit': '°C',
     'description': 'AUX temperature (sacrificial anode)',
@@ -316,7 +318,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_RH',
-    'address': '221',
+    'address': 221,
     'scale': '100',
     'unit': '%',
     'description': 'Humidity',
@@ -325,7 +327,7 @@ registers = [
   },
   {
     'name': 'Nilan_Input_0O2',
-    'address': '222',
+    'address': 222,
     'scale': '',
     'unit': 'ppm',
     'description': 'Carbon dioxide',
@@ -334,7 +336,7 @@ registers = [
   },
   {
     'name': 'Nilan_Alarm_Status',
-    'address': '400',
+    'address': 400,
     'scale': '',
     'unit': '',
     'description': 'Alarm state bit mask',
@@ -343,7 +345,7 @@ registers = [
   },
   {
     'name': 'Nilan_Alarm_List_1_ID',
-    'address': '401',
+    'address': 401,
     'scale': '',
     'unit': '',
     'description': 'Alarm 1 - Code',
@@ -352,7 +354,7 @@ registers = [
   },
   {
     'name': 'Nilan_Alarm_List_1_Date',
-    'address': '402',
+    'address': 402,
     'scale': '',
     'unit': '',
     'description': 'Alarm 1 - Date',
@@ -361,7 +363,7 @@ registers = [
   },
   {
     'name': 'Nilan_Alarm_List_1_Time',
-    'address': '403',
+    'address': 403,
     'scale': '',
     'unit': '',
     'description': 'Alarm 1 - Time',
@@ -370,7 +372,7 @@ registers = [
   },
   {
     'name': 'Nilan_Alarm_List_2_ID',
-    'address': '404',
+    'address': 404,
     'scale': '',
     'unit': '',
     'description': 'Alarm 2 - Code',
@@ -379,7 +381,7 @@ registers = [
   },
   {
     'name': 'Nilan_Alarm_List_2_Date',
-    'address': '405',
+    'address': 405,
     'scale': '',
     'unit': '',
     'description': 'Alarm 2 - Date',
@@ -388,7 +390,7 @@ registers = [
   },
   {
     'name': 'Nilan_Alarm_List_2_Time',
-    'address': '406',
+    'address': 406,
     'scale': '',
     'unit': '',
     'description': 'Alarm 2 - Time',
@@ -397,7 +399,7 @@ registers = [
   },
   {
     'name': 'Nilan_Alarm_List_3_ID',
-    'address': '407',
+    'address': 407,
     'scale': '',
     'unit': '',
     'description': 'Alarm 3 - Code',
@@ -406,7 +408,7 @@ registers = [
   },
   {
     'name': 'Nilan_Alarm_List_3_Date',
-    'address': '408',
+    'address': 408,
     'scale': '',
     'unit': '',
     'description': 'Alarm 3 - Date',
@@ -415,7 +417,7 @@ registers = [
   },
   {
     'name': 'Nilan_Alarm_List_3_Time',
-    'address': '409',
+    'address': 409,
     'scale': '',
     'unit': '',
     'description': 'Alarm 3 - Time',
@@ -424,7 +426,7 @@ registers = [
   },
   {
     'name': 'Nilan_Control_RunAct',
-    'address': '1000',
+    'address': 1000,
     'scale': '',
     'unit': '',
     'description': 'Actual on/off state',
@@ -433,7 +435,7 @@ registers = [
   },
   {
     'name': 'Nilan_Control_ModeAct',
-    'address': '1001',
+    'address': 1001,
     'scale': '',
     'unit': '',
     'description': 'Actual operation mode',
@@ -442,7 +444,7 @@ registers = [
   },
   {
     'name': 'Nilan_Control_State',
-    'address': '1002',
+    'address': 1002,
     'scale': '',
     'unit': '',
     'description': 'Actual control state',
@@ -451,7 +453,7 @@ registers = [
   },
   {
     'name': 'Nilan_Control_SeclnState',
-    'address': '1003',
+    'address': 1003,
     'scale': '',
     'unit': 'Sec',
     'description': 'Actual time in state',
@@ -460,7 +462,7 @@ registers = [
   },
   {
     'name': 'Nilan_AirTemp_IsSummer',
-    'address': '1200',
+    'address': 1200,
     'scale': '',
     'unit': '',
     'description': 'Summer state',
@@ -469,7 +471,7 @@ registers = [
   },
   {
     'name': 'Nilan_AirTemp_Tempinlet',
-    'address': '1201',
+    'address': 1201,
     'scale': '100',
     'unit': '°C',
     'description': 'Inlet temperature request (T7 setpoint)',
@@ -478,7 +480,7 @@ registers = [
   },
   {
     'name': 'Nilan_AirTemp_TempCont',
-    'address': '1202',
+    'address': 1202,
     'scale': '100',
     'unit': '°C',
     'description': 'Actual value for controlled temperature',
@@ -487,7 +489,7 @@ registers = [
   },
   {
     'name': 'Nilan_AirTemp_TempRoom',
-    'address': '1203',
+    'address': 1203,
     'scale': '100',
     'unit': '°C',
     'description': 'Actual room temperature (T15 or T10)',
@@ -496,7 +498,7 @@ registers = [
   },
   {
     'name': 'Nilan_AirTemp_EffPct',
-    'address': '1204',
+    'address': 1204,
     'scale': '100',
     'unit': '%',
     'description': 'Passive heat exchanger efficiency',
@@ -505,7 +507,7 @@ registers = [
   },
   {
     'name': 'Nilan_AirTemp_CapSet',
-    'address': '1205',
+    'address': 1205,
     'scale': '100',
     'unit': '%',
     'description': 'Requested capacity',
@@ -514,7 +516,7 @@ registers = [
   },
   {
     'name': 'Nilan_AirTemp_CapAct',
-    'address': '1206',
+    'address': 1206,
     'scale': '100',
     'unit': '%',
     'description': 'Actual capacity',
@@ -523,7 +525,7 @@ registers = [
   },
   {
     'name': 'Nilan_Display_LED_1',
-    'address': '2000',
+    'address': 2000,
     'scale': '',
     'unit': '',
     'description': 'User panel indicator light',
@@ -532,7 +534,7 @@ registers = [
   },
   {
     'name': 'Nilan_Display_LED_2',
-    'address': '2001',
+    'address': 2001,
     'scale': '',
     'unit': '',
     'description': '',
@@ -541,7 +543,7 @@ registers = [
   },
   {
     'name': 'Nilan_Display_Text_1_2',
-    'address': '2002',
+    'address': 2002,
     'scale': '',
     'unit': 'ascii',
     'description': 'Text line 1 character 1-2',
@@ -550,7 +552,7 @@ registers = [
   },
   {
     'name': 'Nilan_Display_Text_3_4',
-    'address': '2003',
+    'address': 2003,
     'scale': '',
     'unit': 'ascii',
     'description': '',
@@ -559,7 +561,7 @@ registers = [
   },
   {
     'name': 'Nilan_Display_Text_5_6',
-    'address': '2004',
+    'address': 2004,
     'scale': '',
     'unit': 'ascii',
     'description': '',
@@ -568,7 +570,7 @@ registers = [
   },
   {
     'name': 'Nilan_Display_Text_7_8',
-    'address': '2005',
+    'address': 2005,
     'scale': '',
     'unit': 'ascii',
     'description': '',
@@ -577,7 +579,7 @@ registers = [
   },
   {
     'name': 'Nilan_Display_Attr_1_8',
-    'address': '2006',
+    'address': 2006,
     'scale': '',
     'unit': '',
     'description': 'Text line 1 flags',
@@ -586,7 +588,7 @@ registers = [
   },
   {
     'name': 'Nilan_Display_Text_9_10',
-    'address': '2007',
+    'address': 2007,
     'scale': '',
     'unit': 'ascii',
     'description': 'ext line 2 character 9-10',
@@ -595,7 +597,7 @@ registers = [
   },
   {
     'name': 'Nilan_Display_Text_11_12',
-    'address': '2008',
+    'address': 2008,
     'scale': '',
     'unit': 'ascii',
     'description': '',
@@ -604,7 +606,7 @@ registers = [
   },
   {
     'name': 'Nilan_Display_Text_13_14',
-    'address': '2009',
+    'address': 2009,
     'scale': '',
     'unit': 'ascii',
     'description': '',
@@ -613,7 +615,7 @@ registers = [
   },
   {
     'name': 'Nilan_Display_Text_15_16',
-    'address': '2010',
+    'address': 2010,
     'scale': '',
     'unit': 'ascii',
     'description': '',
@@ -622,7 +624,7 @@ registers = [
   },
   {
     'name': 'Nilan_Display_Attr_9_16',
-    'address': '2011',
+    'address': 2011,
     'scale': '',
     'unit': '',
     'description': 'Text line 2 flags',
@@ -631,7 +633,7 @@ registers = [
   },
   {
     'name': 'Nilan_Bus_Address',
-    'address': '0',
+    'address': 0,
     'scale': '',
     'unit': '',
     'description': 'Protocol node address (default = 30)',
@@ -640,7 +642,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_AirFlap',
-    'address': '100',
+    'address': 100,
     'scale': '',
     'unit': '',
     'description': 'Air flap',
@@ -649,7 +651,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_SmokeFlap',
-    'address': '101',
+    'address': 101,
     'scale': '',
     'unit': '',
     'description': 'Fire/Smoke flap',
@@ -658,7 +660,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_BypassOpen',
-    'address': '102',
+    'address': 102,
     'scale': '',
     'unit': '',
     'description': 'Bypass flap open',
@@ -667,7 +669,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_BypassClose',
-    'address': '103',
+    'address': 103,
     'scale': '',
     'unit': '',
     'description': 'Bypass flap close',
@@ -676,7 +678,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_AirCircPump',
-    'address': '104',
+    'address': 104,
     'scale': '',
     'unit': '',
     'description': 'Air heat circulation pump',
@@ -685,7 +687,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_AirHeatAllo',
-    'address': '105',
+    'address': 105,
     'scale': '',
     'unit': '',
     'description': 'Air heating selected',
@@ -694,7 +696,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_AirHeat_1',
-    'address': '106',
+    'address': 106,
     'scale': '',
     'unit': '',
     'description': 'Air heater relays',
@@ -703,7 +705,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_AirHeat_2',
-    'address': '107',
+    'address': 107,
     'scale': '',
     'unit': '',
     'description': 'Air heater relays',
@@ -712,7 +714,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_AirHeat_3',
-    'address': '108',
+    'address': 108,
     'scale': '',
     'unit': '',
     'description': 'Air heater relays',
@@ -721,7 +723,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_Compressor',
-    'address': '109',
+    'address': 109,
     'scale': '',
     'unit': '',
     'description': 'Compressor',
@@ -730,7 +732,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_Compressor2',
-    'address': '110',
+    'address': 110,
     'scale': '',
     'unit': '',
     'description': 'Compressor 2',
@@ -739,7 +741,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_4WayCool',
-    'address': '111',
+    'address': 111,
     'scale': '',
     'unit': '',
     'description': '4-way valve',
@@ -748,7 +750,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_HotgasHeat',
-    'address': '112',
+    'address': 112,
     'scale': '',
     'unit': '',
     'description': 'Hotgas valve - heat',
@@ -757,7 +759,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_HotgasCool',
-    'address': '113',
+    'address': 113,
     'scale': '',
     'unit': '',
     'description': 'Hotgas valve - cool',
@@ -766,7 +768,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_CondOpen',
-    'address': '114',
+    'address': 114,
     'scale': '',
     'unit': '',
     'description': 'Air condenser active',
@@ -775,7 +777,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_CondClose',
-    'address': '115',
+    'address': 115,
     'scale': '',
     'unit': '',
     'description': 'Air condenser inactive',
@@ -784,7 +786,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_WaterHeat',
-    'address': '116',
+    'address': 116,
     'scale': '',
     'unit': '',
     'description': 'Hot water heater',
@@ -793,7 +795,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_3WayValve',
-    'address': '117',
+    'address': 117,
     'scale': '',
     'unit': '',
     'description': 'Hot water 3-way valve',
@@ -802,7 +804,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_CenCircPump',
-    'address': '118',
+    'address': 118,
     'scale': '',
     'unit': '',
     'description': 'EK circulation pump',
@@ -811,7 +813,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_CenHeat_1',
-    'address': '119',
+    'address': 119,
     'scale': '',
     'unit': '',
     'description': 'EK heater relays',
@@ -820,7 +822,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_CenHeat_2',
-    'address': '120',
+    'address': 120,
     'scale': '',
     'unit': '',
     'description': 'EK heater relays',
@@ -829,7 +831,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_CenHeat_3',
-    'address': '121',
+    'address': 121,
     'scale': '',
     'unit': '',
     'description': 'EK heater relays',
@@ -838,7 +840,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_CenHeatExt',
-    'address': '122',
+    'address': 122,
     'scale': '',
     'unit': '',
     'description': 'External radiator heat',
@@ -847,7 +849,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_UserFunc',
-    'address': '123',
+    'address': 123,
     'scale': '',
     'unit': '',
     'description': 'User function active',
@@ -856,7 +858,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_UserFunc_2',
-    'address': '124',
+    'address': 124,
     'scale': '',
     'unit': '',
     'description': 'User function active',
@@ -865,7 +867,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_Defrosting',
-    'address': '125',
+    'address': 125,
     'scale': '',
     'unit': '',
     'description': 'Defrost function active',
@@ -874,7 +876,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_ExhaustSpeed',
-    'address': '200',
+    'address': 200,
     'scale': '100',
     'unit': '%',
     'description': 'Exhaust fan speed',
@@ -883,7 +885,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_InletSpeed',
-    'address': '201',
+    'address': 201,
     'scale': '100',
     'unit': '%',
     'description': 'Inlet fan speed',
@@ -892,7 +894,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_AirHeatCap',
-    'address': '202',
+    'address': 202,
     'scale': '100',
     'unit': '%',
     'description': 'Air heater capacity',
@@ -901,7 +903,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_CenHeatCap',
-    'address': '203',
+    'address': 203,
     'scale': '100',
     'unit': '%',
     'description': 'Central heater capacity',
@@ -910,7 +912,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_CprCap',
-    'address': '204',
+    'address': 204,
     'scale': '100',
     'unit': '%',
     'description': 'Compresor capacity',
@@ -919,7 +921,7 @@ registers = [
   },
   {
     'name': 'Nilan_Output_EarthSpeed',
-    'address': '205',
+    'address': 205,
     'scale': '100',
     'unit': '%',
     'description': 'Earth tube air intake fan speed',
@@ -928,7 +930,7 @@ registers = [
   },
   {
     'name': 'Nilan_Time_Second',
-    'address': '300',
+    'address': 300,
     'scale': '',
     'unit': 'ss',
     'description': 'Second',
@@ -937,7 +939,7 @@ registers = [
   },
   {
     'name': 'Nilan_Time_Minute',
-    'address': '301',
+    'address': 301,
     'scale': '',
     'unit': 'nn',
     'description': 'Minute',
@@ -946,7 +948,7 @@ registers = [
   },
   {
     'name': 'Nilan_Time_Hour',
-    'address': '302',
+    'address': 302,
     'scale': '',
     'unit': 'hh',
     'description': 'Hour',
@@ -955,7 +957,7 @@ registers = [
   },
   {
     'name': 'Nilan_Time_Day',
-    'address': '303',
+    'address': 303,
     'scale': '',
     'unit': 'dd',
     'description': 'Day',
@@ -964,7 +966,7 @@ registers = [
   },
   {
     'name': 'Nilan_Time_Month',
-    'address': '304',
+    'address': 304,
     'scale': '',
     'unit': 'mm',
     'description': 'Month',
@@ -973,7 +975,7 @@ registers = [
   },
   {
     'name': 'Nilan_Time_Year',
-    'address': '305',
+    'address': 305,
     'scale': '',
     'unit': 'yyyy',
     'description': 'Year',
@@ -982,7 +984,7 @@ registers = [
   },
   {
     'name': 'Nilan_Alarm_Reset',
-    'address': '400',
+    'address': 400,
     'scale': '',
     'unit': '',
     'description': 'Clear one specific alarm code or all',
@@ -991,7 +993,7 @@ registers = [
   },
   {
     'name': 'Nilan_Program_Select',
-    'address': '500',
+    'address': 500,
     'scale': '',
     'unit': '',
     'description': 'Week program nb. select',
@@ -1000,7 +1002,7 @@ registers = [
   },
   {
     'name': 'Nilan_Program_UserFuncAct',
-    'address': '600',
+    'address': 600,
     'scale': '',
     'unit': '',
     'description': 'User function active (See UserFuncSet)',
@@ -1009,7 +1011,7 @@ registers = [
   },
   {
     'name': 'Nilan_Program_UserFuncSet',
-    'address': '601',
+    'address': 601,
     'scale': '',
     'unit': '',
     'description': 'User function select',
@@ -1018,7 +1020,7 @@ registers = [
   },
   {
     'name': 'Nilan_Program_UserTimeSet',
-    'address': '602',
+    'address': 602,
     'scale': '',
     'unit': '',
     'description': 'Min User function period',
@@ -1027,7 +1029,7 @@ registers = [
   },
   {
     'name': 'Nilan_Program_UserVentSet',
-    'address': '603',
+    'address': 603,
     'scale': '',
     'unit': '',
     'description': 'Step User function ventilation',
@@ -1036,7 +1038,7 @@ registers = [
   },
   {
     'name': 'Nilan_Program_UserTempSet',
-    'address': '604',
+    'address': 604,
     'scale': '',
     'unit': '°C',
     'description': 'User function temperature (Extend function only)',
@@ -1045,7 +1047,7 @@ registers = [
   },
   {
     'name': 'Nilan_Program_UserOffsSet',
-    'address': '605',
+    'address': 605,
     'scale': '',
     'unit': '°C',
     'description': 'User function temperature(Offset function only)',
@@ -1054,7 +1056,7 @@ registers = [
   },
   {
     'name': 'Nilan_Program_User2FuncAct',
-    'address': '610',
+    'address': 610,
     'scale': '',
     'unit': '',
     'description': 'User function active (See UserFuncSet2)',
@@ -1063,7 +1065,7 @@ registers = [
   },
   {
     'name': 'Nilan_Program_User2FuncSet',
-    'address': '611',
+    'address': 611,
     'scale': '',
     'unit': '',
     'description': 'User function select',
@@ -1072,7 +1074,7 @@ registers = [
   },
   {
     'name': 'Nilan_Program_User2TimeSet',
-    'address': '612',
+    'address': 612,
     'scale': '',
     'unit': '',
     'description': 'Min User function period',
@@ -1081,7 +1083,7 @@ registers = [
   },
   {
     'name': 'Nilan_Program_User2VentSet',
-    'address': '613',
+    'address': 613,
     'scale': '',
     'unit': '',
     'description': 'Step User function ventilation',
@@ -1090,7 +1092,7 @@ registers = [
   },
   {
     'name': 'Nilan_Program_User2TempSet',
-    'address': '614',
+    'address': 614,
     'scale': '',
     'unit': '°C',
     'description': 'User function temperature (Extend function only)',
@@ -1099,7 +1101,7 @@ registers = [
   },
   {
     'name': 'Nilan_Program_User2OffsSet',
-    'address': '615',
+    'address': 615,
     'scale': '',
     'unit': '°C',
     'description': 'User function temperature(Offset function only)',
@@ -1108,7 +1110,7 @@ registers = [
   },
   {
     'name': 'Nilan_Control_Type',
-    'address': '1000',
+    'address': 1000,
     'scale': '',
     'unit': '',
     'description': 'Machine type select',
@@ -1117,7 +1119,7 @@ registers = [
   },
   {
     'name': 'Nilan_Control_RunSet',
-    'address': '1001',
+    'address': 1001,
     'scale': '',
     'unit': '',
     'description': 'User on / off select',
@@ -1126,7 +1128,7 @@ registers = [
   },
   {
     'name': 'Nilan_Control_ModeSet',
-    'address': '1002',
+    'address': 1002,
     'scale': '',
     'unit': '',
     'description': 'User operation mode select',
@@ -1135,7 +1137,7 @@ registers = [
   },
   {
     'name': 'Nilan_Control_VentSet',
-    'address': '1003',
+    'address': 1003,
     'scale': '',
     'unit': 'Step',
     'description': 'User ventilation step select',
@@ -1144,7 +1146,7 @@ registers = [
   },
   {
     'name': 'Nilan_Control_TempSet',
-    'address': '1004',
+    'address': 1004,
     'scale': '100',
     'unit': '°C',
     'description': 'User temperature setpoint',
@@ -1153,7 +1155,7 @@ registers = [
   },
   {
     'name': 'Nilan_Control_ServiceMode',
-    'address': '1005',
+    'address': 1005,
     'scale': '',
     'unit': '',
     'description': 'Service mode select',
@@ -1162,7 +1164,7 @@ registers = [
   },
   {
     'name': 'Nilan_Control_ServicePct',
-    'address': '1006',
+    'address': 1006,
     'scale': '100',
     'unit': '%',
     'description': 'Service mode capacity',
@@ -1171,7 +1173,7 @@ registers = [
   },
   {
     'name': 'Nilan_Control_Preset',
-    'address': '1007',
+    'address': 1007,
     'scale': '',
     'unit': '',
     'description': 'Request preset to factory',
@@ -1180,7 +1182,7 @@ registers = [
   },
   {
     'name': 'Nilan_AirFlow_AirExchMode',
-    'address': '1100',
+    'address': 1100,
     'scale': '',
     'unit': '',
     'description': 'Air exchange mode',
@@ -1189,7 +1191,7 @@ registers = [
   },
   {
     'name': 'Nilan_AirFlow_CoolVent',
-    'address': '1101',
+    'address': 1101,
     'scale': '',
     'unit': 'Step',
     'description': 'Cooling high ventilation step',
@@ -1198,7 +1200,7 @@ registers = [
   },
   {
     'name': 'Nilan_AirTemp_CoolSet',
-    'address': '1200',
+    'address': 1200,
     'scale': '',
     'unit': '°C',
     'description': 'Cooling temperature setpoint select',
@@ -1207,7 +1209,7 @@ registers = [
   },
   {
     'name': 'Nilan_AirTemp_TempMinSum',
-    'address': '1201',
+    'address': 1201,
     'scale': '100',
     'unit': '°C',
     'description': 'Inlet temp. min. summer',
@@ -1216,7 +1218,7 @@ registers = [
   },
   {
     'name': 'Nilan_AirTemp_TempMinWin',
-    'address': '1202',
+    'address': 1202,
     'scale': '100',
     'unit': '°C',
     'description': 'Inlet temp. min. winter',
@@ -1225,7 +1227,7 @@ registers = [
   },
   {
     'name': 'Nilan_AirTemp_TempMax',
-    'address': '1203',
+    'address': 1203,
     'scale': '100',
     'unit': '°C',
     'description': 'Inlet temp. max. summer',
@@ -1234,7 +1236,7 @@ registers = [
   },
   {
     'name': 'Nilan_AirTemp_TempMaxWin',
-    'address': '1204',
+    'address': 1204,
     'scale': '100',
     'unit': '°C',
     'description': 'Inlet temp. max. winter',
@@ -1243,7 +1245,7 @@ registers = [
   },
   {
     'name': 'Nilan_AirTemp_TempSummer',
-    'address': '1205',
+    'address': 1205,
     'scale': '100',
     'unit': '°C',
     'description': 'Summer/winter limit',
@@ -1252,7 +1254,7 @@ registers = [
   },
   {
     'name': 'Nilan_HotWater_TempSet_T11',
-    'address': '1700',
+    'address': 1700,
     'scale': '',
     'unit': '°C',
     'description': 'Top temperature setpoint',
@@ -1261,7 +1263,7 @@ registers = [
   },
   {
     'name': 'Nilan_HotWater_TempSet_T12',
-    'address': '1701',
+    'address': 1701,
     'scale': '',
     'unit': '°C',
     'description': 'Bottom temperature setpoint',
@@ -1270,7 +1272,7 @@ registers = [
   },
   {
     'name': 'Nilan_CentralHeat_HeatExtern',
-    'address': '1800',
+    'address': 1800,
     'scale': '',
     'unit': '°C',
     'description': 'External heating offset from room temperature setpoint',
@@ -1279,7 +1281,7 @@ registers = [
   },
   {
     'name': 'Nilan_AirQual_RH_VentLo',
-    'address': '1910',
+    'address': 1910,
     'scale': '',
     'unit': 'Step',
     'description': 'Humidity low winter step select',
@@ -1288,7 +1290,7 @@ registers = [
   },
   {
     'name': 'Nilan_AirQual_RH_VentHi',
-    'address': '1911',
+    'address': 1911,
     'scale': '',
     'unit': 'Step',
     'description': 'Humidity high step select',
@@ -1297,7 +1299,7 @@ registers = [
   },
   {
     'name': 'Nilan_AirQual_RH_LimLo',
-    'address': '1912',
+    'address': 1912,
     'scale': '100',
     'unit': '%',
     'description': 'Humidity limit for low ventilation',
@@ -1306,7 +1308,7 @@ registers = [
   },
   {
     'name': 'Nilan_AirQual_RH_TimeOut',
-    'address': '1913',
+    'address': 1913,
     'scale': '',
     'unit': 'min',
     'description': 'Humidity max. time on high ventilation',
@@ -1315,7 +1317,7 @@ registers = [
   },
   {
     'name': 'Nilan_AirQual_CO2_VentHi',
-    'address': '1920',
+    'address': 1920,
     'scale': '',
     'unit': 'Step',
     'description': 'CO2 high step select',
@@ -1324,7 +1326,7 @@ registers = [
   },
   {
     'name': 'Nilan_AirQual_CO2_LimLo',
-    'address': '1921',
+    'address': 1921,
     'scale': '',
     'unit': 'ppm',
     'description': 'CO2 limit for normal ventilation',
@@ -1333,7 +1335,7 @@ registers = [
   },
   {
     'name': 'Nilan_AirQual_0O2_LimHi',
-    'address': '1922',
+    'address': 1922,
     'scale': '',
     'unit': 'ppm',
     'description': 'CO2 limit for high ventilation',
@@ -1342,7 +1344,7 @@ registers = [
   },
   {
     'name': 'Nilan_Display_KeyCode',
-    'address': '2000',
+    'address': 2000,
     'scale': '',
     'unit': '',
     'description': 'User panel keypress',
