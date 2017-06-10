@@ -28,16 +28,11 @@ class CTS602(minimalmodbus.Instrument):
 
 if __name__ == '__main__':
     m = CTS602('/dev/ttyUSB0')
-    m.debug = True
+    #m.debug = True
     for o in registers:
-        print o['address'], o['name'], o['description']
-        try:
-            print 'Value1:', m.read_register(int(o['address']))
-        except ValueError, e:
-            try:
-                time.sleep(1)
-                print 'Value2:', m.read_register(int(o['address']), signed=True)
-            except ValueError:
-                print 'Value3: ???'
+        if o['type'] == 'Input':
+            v = m.read_register(o['address'], functioncode=4)
+        elif o['type'] == 'Holding':
+            v = m.read_register(o['address'])
+        print '%c\t%d\t%s\t%s\t%s' % (o['type'][0], o['address'], str(v), o['name'], o['description'])
         time.sleep(1)
-        print '--'*10

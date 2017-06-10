@@ -1,6 +1,7 @@
 #encoding=utf-8
 
 registers = [
+  # Protocol and controller setup
   {
     'name': 'Nilan_Bus_Version',
     'address': 000,
@@ -37,6 +38,7 @@ registers = [
     'devices': 'All plants',
     'type': 'Input'
   },
+  # Input / output bits (on/off)
   {
     'name': 'Nilan_Input_UserFunc',
     'address': 100,
@@ -163,6 +165,7 @@ registers = [
     'devices': 'VPL-VGU-VP-Compact-Comfort',
     'type': 'Input'
   },
+  # Input / output words
   {
     'name': 'Nilan_Input_T0_Controller',
     'address': 200,
@@ -316,6 +319,7 @@ registers = [
     'devices': 'VGU-VP-Compact',
     'type': 'Input'
   },
+  # 217--220 reserved
   {
     'name': 'Nilan_Input_RH',
     'address': 221,
@@ -431,7 +435,11 @@ registers = [
     'unit': '',
     'description': 'Actual on/off state',
     'devices': 'All',
-    'type': 'Input'
+    'type': 'Input',
+    'values': {
+        0: 'Off',
+        1: 'On'
+    }
   },
   {
     'name': 'Nilan_Control_ModeAct',
@@ -440,7 +448,14 @@ registers = [
     'unit': '',
     'description': 'Actual operation mode',
     'devices': 'All',
-    'type': 'Input'
+    'type': 'Input',
+    'values': {
+        0: 'Off',
+        1: 'Heat',
+        2: 'Cool',
+        3: 'Auto',
+        4: 'Service'
+    }
   },
   {
     'name': 'Nilan_Control_State',
@@ -449,7 +464,26 @@ registers = [
     'unit': '',
     'description': 'Actual control state',
     'devices': 'All',
-    'type': 'Input'
+    'type': 'Input',
+    'values': {
+        0: 'Off',
+        1: 'Shift',
+        2: 'Stop',
+        3: 'Start',
+        4: 'Standby',
+        5: 'Ventilation stop',
+        6: 'Ventilation',
+        7: 'Heating',
+        8: 'Cooling',
+        9: 'Hot water',
+        10: 'Legionella',
+        11: 'Cooling + hot water',
+        12: 'Central heating',
+        13: 'Defrost',
+        14: 'Frost secure',
+        15: 'Service',
+        16: 'Alarm'
+    }
   },
   {
     'name': 'Nilan_Control_SeclnState',
@@ -467,7 +501,11 @@ registers = [
     'unit': '',
     'description': 'Summer state',
     'devices': 'All',
-    'type': 'Input'
+    'type': 'Input',
+    'values': {
+        0: 'Off',
+        1: 'On',
+    }
   },
   {
     'name': 'Nilan_AirTemp_Tempinlet',
@@ -631,6 +669,7 @@ registers = [
     'devices': 'All plants',
     'type': 'Input'
   },
+  # Holding registers
   {
     'name': 'Nilan_Bus_Address',
     'address': 0,
@@ -928,6 +967,7 @@ registers = [
     'devices': 'VPcCoB',
     'type': 'Holding'
   },
+  # Clock and calendar
   {
     'name': 'Nilan_Time_Second',
     'address': 300,
@@ -982,6 +1022,7 @@ registers = [
     'devices': 'All plants',
     'type': 'Holding'
   },
+  # Alarm and message handling
   {
     'name': 'Nilan_Alarm_Reset',
     'address': 400,
@@ -989,7 +1030,11 @@ registers = [
     'unit': '',
     'description': 'Clear one specific alarm code or all',
     'devices': 'All plants',
-    'type': 'Holding'
+    'type': 'Holding',
+    'values': { 0: 'No command' }\
+        .update(dict([(x, 'Reserved internal command') for x in range(1,100)]))\
+        .update(dict([(100+x, 'Clear alarm display code %d' % x) for x in range(1,100)]))\
+        .update({255: 'Clear all alarms'})
   },
   {
     'name': 'Nilan_Program_Select',
@@ -998,7 +1043,14 @@ registers = [
     'unit': '',
     'description': 'Week program nb. select',
     'devices': 'All plants',
-    'type': 'Holding'
+    'type': 'Holding',
+    'values': {
+        0: 'None',
+        1: 'Program 1',
+        2: 'Program 2',
+        3: 'Program 3',
+        4: 'Erase'
+    }
   },
   {
     'name': 'Nilan_Program_UserFuncAct',
@@ -1016,7 +1068,15 @@ registers = [
     'unit': '',
     'description': 'User function select',
     'devices': 'All plants',
-    'type': 'Holding'
+    'type': 'Holding',
+    'values': {
+        0: 'None',
+        1: 'Extend',
+        2: 'Inlet',
+        3: 'Exhaust',
+        4: 'External heater offset',
+        5: 'Ventilate'
+    }
   },
   {
     'name': 'Nilan_Program_UserTimeSet',
@@ -1034,7 +1094,14 @@ registers = [
     'unit': '',
     'description': 'Step User function ventilation',
     'devices': 'All plants',
-    'type': 'Holding'
+    'type': 'Holding',
+    'values': {
+        0: 'Off',
+        1: 'Step number',
+        2: 'Step number',
+        3: 'Step number',
+        4: 'Step number'
+    }
   },
   {
     'name': 'Nilan_Program_UserTempSet',
@@ -1124,7 +1191,11 @@ registers = [
     'unit': '',
     'description': 'User on / off select',
     'devices': 'All plants',
-    'type': 'Holding'
+    'type': 'Holding',
+    'values': {
+        0: 'Off',
+        1 : 'On',
+    }
   },
   {
     'name': 'Nilan_Control_ModeSet',
@@ -1133,7 +1204,14 @@ registers = [
     'unit': '',
     'description': 'User operation mode select',
     'devices': 'All plants',
-    'type': 'Holding'
+    'type': 'Holding',
+    'values': {
+        0: 'Off',
+        1: 'Heat',
+        2: 'Cool',
+        3: 'Auto',
+        4: 'Service'
+    }
   },
   {
     'name': 'Nilan_Control_VentSet',
@@ -1160,7 +1238,18 @@ registers = [
     'unit': '',
     'description': 'Service mode select',
     'devices': 'All plants',
-    'type': 'Holding'
+    'type': 'Holding',
+    'values': {
+        0: 'Off',
+        1: 'Defrost',
+        2: 'Flaps',
+        3: 'Inlet',
+        4: 'Exhaust',
+        5: 'Compressor',
+        6: 'Heating',
+        7: 'Hot water',
+        8: 'Central heat'
+    }
   },
   {
     'name': 'Nilan_Control_ServicePct',
@@ -1178,7 +1267,13 @@ registers = [
     'unit': '',
     'description': 'Request preset to factory',
     'devices': 'All plants',
-    'type': 'Holding'
+    'type': 'Holding',
+    'values': {
+        0: 'Ready',
+        1: 'Preset',
+        2: 'Backup (to user file)',
+        3: 'Restore (from user file)'
+    }    
   },
   {
     'name': 'Nilan_AirFlow_AirExchMode',
@@ -1187,7 +1282,12 @@ registers = [
     'unit': '',
     'description': 'Air exchange mode',
     'devices': 'VPL-VPM-VGU-VP-',
-    'type': 'Holding'
+    'type': 'Holding',
+    'values': {
+        0: 'Energy',
+        1: 'Comfort',
+        2: 'ComfortWater'
+    }
   },
   {
     'name': 'Nilan_AirFlow_CoolVent',
@@ -1349,6 +1449,14 @@ registers = [
     'unit': '',
     'description': 'User panel keypress',
     'devices': 'All plants',
-    'type': 'Holding'
+    'type': 'Holding',
+    'values': {
+        0x01: 'ESCAPE',
+        0x02: 'UP',
+        0x04: 'DOWN',
+        0x08: 'ENTER',
+        0x10: 'OFF',
+        0x20: 'ON'
+    }
   }
 ]
