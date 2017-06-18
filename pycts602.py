@@ -9,7 +9,7 @@ import struct
 import minimalmodbus
 from cts602_registers import registers
 
-class CTS602(minimalmodbus.Instrument):
+class CTS602API(minimalmodbus.Instrument):
 
     def __init__(self, portname, slaveaddr=30):
         minimalmodbus.Instrument.__init__(self, portname, slaveaddr)
