@@ -1031,10 +1031,10 @@ registers = [
     'description': 'Clear one specific alarm code or all',
     'devices': 'All plants',
     'type': 'Holding',
-    'values': { 0: 'No command' }\
-        .update(dict([(x, 'Reserved internal command') for x in range(1,100)]))\
-        .update(dict([(100+x, 'Clear alarm display code %d' % x) for x in range(1,100)]))\
-        .update({255: 'Clear all alarms'})
+    #'values': { 0: 'No command' }\
+        #.update(dict([(x, 'Reserved internal command') for x in range(1,100)]))\
+        #.update(dict([(100+x, 'Clear alarm display code %d' % x) for x in range(1,100)]))\
+        #.update({255: 'Clear all alarms'})
   },
   {
     'name': 'Nilan_Program_Select',
