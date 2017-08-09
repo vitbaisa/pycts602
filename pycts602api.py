@@ -26,9 +26,9 @@ class CTS602API(minimalmodbus.Instrument):
         if ru in ['ascii', 'text']: # 2 chars
             return value
         elif ru == '%':
-            return value / 100.0
+            return round(value / 100.0, 1)
         elif ru == '\xc2\xb0C':
-            return value / 100.0
+            return round(value / 100.0, 1)
         elif ru == 'Step':
             # TODO?
             return value
