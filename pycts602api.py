@@ -24,7 +24,9 @@ class CTS602API(minimalmodbus.Instrument):
             return record['values'].get(value, value)
         ru = record['unit']
         if ru in ['ascii', 'text']: # 2 chars
-            return ''.join([chr(value % 256), chr(value / 256)])
+            ch1 = value % 256
+            ch2 = value / 256
+            return (ch1 == 223 and '\xc2\xb0' or chr(ch1)) + chr(ch2)
         elif ru == '%':
             return round(value / 100.0, 1)
         elif ru == '\xc2\xb0C':
@@ -57,8 +59,6 @@ if __name__ == '__main__':
             v = m.read_register(o['address'])
         # write out only VP-supported registers
         if not 'VP' in o['devices'] and o['devices'] != 'All plants':
-            continue
-        if o['address'] < 2000 or o['address'] > 2011:
             continue
         t = m.normalize(o, v)
         print '%c\t%d\t%s\t%s\t%s\t%s' % (o['type'][0], o['address'], str(v),
