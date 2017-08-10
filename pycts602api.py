@@ -19,6 +19,33 @@ class CTS602API(minimalmodbus.Instrument):
         self.format = 'bbbhh'
         self.reg2addr = dict([(x['name'], x['address']) for x in registers])
 
+    def resetVent(self):
+        self.setVentStep(1)
+
+    def setVentStep(self, step=1):
+        assert step in [0, 1, 2, 3, 4]
+        self.write_register(1003, step)
+
+    def increaseUserTemp(self):
+        current_temp = self.read_register(1004)
+        new_temp = current_temp + 100
+        assert new_temp < 2600
+        self.write_register(1004, new_temp)
+        return new_temp
+
+    def decreaseUserTemp(self):
+        current_temp = self.read_register(1004)
+        print current_temp
+        new_temp = current_temp - 100
+        assert new_temp > 1800
+        self.write_register(1004, new_temp)
+        return new_temp
+
+    def setUserTemp(self, temp=21):
+        assert type(temp) == type(1)
+        assert temp < 26 and temp > 18
+        self.write_register(1004, temp*100)
+
     def normalize(self, record, value):
         if record.get('values',False):
             return record['values'].get(value, value)

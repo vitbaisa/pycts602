@@ -1097,10 +1097,10 @@ registers = [
     'type': 'Holding',
     'values': {
         0: 'Off',
-        1: 'Step number',
-        2: 'Step number',
-        3: 'Step number',
-        4: 'Step number'
+        1: '1',
+        2: '2',
+        3: '3',
+        4: '4'
     }
   },
   {
