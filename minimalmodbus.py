@@ -98,9 +98,9 @@ class Instrument():
 
     """
 
-    def __init__(self, port, slaveaddress, mode=MODE_RTU):
+    def __init__(self, port, slaveaddress, mode=MODE_RTU, timeout=TIMEOUT):
         if port not in _SERIALPORTS or not _SERIALPORTS[port]:
-            self.serial = _SERIALPORTS[port] = serial.Serial(port=port, baudrate=BAUDRATE, parity=PARITY, bytesize=BYTESIZE, stopbits=STOPBITS, timeout=TIMEOUT)
+            self.serial = _SERIALPORTS[port] = serial.Serial(port=port, baudrate=BAUDRATE, parity=PARITY, bytesize=BYTESIZE, stopbits=STOPBITS, timeout=timeout)
         else:
             self.serial = _SERIALPORTS[port]
             if self.serial.port is None:
