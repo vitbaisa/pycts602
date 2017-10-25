@@ -12,7 +12,7 @@ from cts602_registers import registers
 class CTS602API(minimalmodbus.Instrument):
 
     def __init__(self, portname='/dev/ttyUSB0', slaveaddr=30):
-        minimalmodbus.Instrument.__init__(self, portname, slaveaddr)
+        minimalmodbus.Instrument.__init__(self, portname, slaveaddr, timeout=0.1)
         self.registers = registers
         self.regd = dict([((x['address'], x['type'] == 'Input' and 4 or 3), x)\
                 for x in self.registers])
@@ -124,19 +124,35 @@ class CTS602API(minimalmodbus.Instrument):
 
 
 if __name__ == '__main__':
-    m = CTS602API('/dev/ttyUSB0')
-
-    m.turn_on()
-    exit(0)
-
-    for o in m.registers:
-        if o['type'] == 'Input':
-            v = m.read_register(o['address'], functioncode=4)
-        elif o['type'] == 'Holding':
-            v = m.read_register(o['address'])
-        # write out only VP-supported registers
-        if not 'VP' in o['devices'] and o['devices'] != 'All plants':
-            continue
-        t = m.normalize(o, v)
-        print '%c\t%d\t%s\t%s\t%s\t%s' % (o['type'][0], o['address'], str(v),
-                t, o['name'], o['description'])
+    import sys
+    tty = sys.argv[1]
+    m = CTS602API(tty)
+    if '-s' in sys.argv:
+        import sqlite3
+        dbf = sys.argv[sys.argv.index('-s')+1]
+        conn = sqlite3.connect(dbf)
+        cur = conn.cursor()
+        r = m.get_realtime_data()
+        if not r: exit(1)
+        wbt = r['water_bottom_temp']['value']
+        wtt = r['water_top_temp']['value']
+        pat = r['panel_temp']['value']
+        cdt = r['condenser_temp']['value']
+        ehs = r['exhaust_speed']['value'] # percents
+        stt = r['status_time']['raw'] # seconds
+        odt = r['outdoor_temp']['value']
+        ilt = r['inlet_temp']['value']
+        sta = r['status']['raw'] # code
+        ils = r['inlet_speed']['value']
+        evt = r['evaporator_temp']['value']
+        run = r['running']['raw'] # code
+        itt = r['intake_temp']['value']
+        bot = r['board_temp']['value']
+        ott = r['outlet_temp']['value']
+        hum = r['humidity']['value']
+        mod = r['mode']['raw'] # code
+        ast = r['air_set_temp']['value']
+        fal = r['filter_alarm']['raw']
+        wst = r['water_set_temp']['value']
+        cur.execute('INSERT INTO nilan (humidity, panel_temp, board_temp, condenser_temp, evaporator_temp, intake_temp, inlet_temp, outlet_temp, exhaust_speed, inlet_speed, water_top_temp, water_bottom_temp, status_time, status, running, mode, air_set_temp, water_set_temp, filter_alarm) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', (hum, pat, bot, cdt, evt, itt, ilt, ott, ehs, ils, wtt, wbt, stt, sta, run, mod, ast, wst, fal))
+        conn.commit()
