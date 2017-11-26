@@ -49,13 +49,13 @@ class CTS602API(minimalmodbus.Instrument):
         current_temp = self.read_register(1004)
         print current_temp
         new_temp = current_temp - 100
-        assert new_temp > 1800
+        assert new_temp > 1500
         self.write_register(1004, new_temp)
         return new_temp
 
     def set_user_temp(self, temp=21):
         assert type(temp) == type(1)
-        assert temp < 26 and temp > 18
+        assert temp < 26 and temp > 15
         self.write_register(1004, temp*100)
 
     def normalize(self, record, value):
