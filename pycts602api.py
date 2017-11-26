@@ -69,6 +69,8 @@ class CTS602API(minimalmodbus.Instrument):
         elif ru == '%':
             return round(value / 100.0, 1)
         elif ru == '\xc2\xb0C':
+            # short int
+            value = -(value & 0x8000) | (value & 0x7fff)
             return round(value / 100.0, 1)
         elif ru == 'Step':
             # TODO?
@@ -156,3 +158,7 @@ if __name__ == '__main__':
         wst = r['water_set_temp']['value']
         cur.execute('INSERT INTO nilan (humidity, panel_temp, board_temp, condenser_temp, evaporator_temp, intake_temp, inlet_temp, outlet_temp, exhaust_speed, inlet_speed, water_top_temp, water_bottom_temp, status_time, status, running, mode, air_set_temp, water_set_temp, filter_alarm) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', (hum, pat, bot, cdt, evt, itt, ilt, ott, ehs, ils, wtt, wbt, stt, sta, run, mod, ast, wst, fal))
         conn.commit()
+    else:
+        r = m.get_realtime_data()
+        for k in r:
+            print k, r[k]
