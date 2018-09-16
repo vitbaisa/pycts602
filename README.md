@@ -29,3 +29,18 @@ Function|Name|Description
 03|Read Holding Registers|Read one or more holding registers|
 04|Read Input Registers|Read one or more input registers|
 16|Preset Multiple Registers|Write one or more holding registers|
+
+## Example
+
+```
+# pycts602api.py must be somewhere in PATH
+from pycts602api import CTS602API
+
+m = CTS602API('/dev/ttyUSB0') # change appropriately
+data = m.get_realtime_data()
+# print out humidity (%)
+print data['humidity']['value']
+
+# set bottom water temperature
+m.set_water_bottom(20)
+```
