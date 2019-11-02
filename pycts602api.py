@@ -23,27 +23,37 @@ class CTS602API(minimalmodbus.Instrument):
 
     def turn_off(self):
         self.write_register(1001, 0)
-        return 0
+        return {
+            "message": "Nilan turned off"
+        }
 
     def turn_on(self):
         self.write_register(1001, 1)
-        return 1
+        return {
+            "message": "Nilan turned on"
+        }
 
     def reset_vent(self):
         self.setVentStep(1)
-        return 1
+        return {
+            "message": "Nilan vent reset"
+        }
 
     def set_vent_step(self, step=1):
         assert step in [0, 1, 2, 3, 4]
         self.write_register(1003, step)
-        return step
+        return {
+            "message": "Nilan vent set to " + str(step)
+        }
 
     def increase_user_air_temp(self):
         current_temp = self.read_register(1004)
         new_temp = current_temp + 100
         assert new_temp < 2600
         self.write_register(1004, new_temp)
-        return new_temp
+        return {
+            "message": "Nilan air temp set to " + str(new_temp)
+        }
 
     def decrease_user_air_temp(self):
         current_temp = self.read_register(1004)
@@ -51,12 +61,33 @@ class CTS602API(minimalmodbus.Instrument):
         new_temp = current_temp - 100
         assert new_temp > 1500
         self.write_register(1004, new_temp)
-        return new_temp
+        return {
+            "message": "Nilan air temp set to " + str(new_temp)
+        }
 
     def set_user_temp(self, temp=21):
         assert type(temp) == type(1)
         assert temp < 26 and temp > 15
         self.write_register(1004, temp*100)
+
+    def set_water_bottom(self, temp=20):
+        assert type(temp) == type(1)
+        assert temp > 10 and temp < 81
+        self.write_register(1701, temp*100)
+
+    def increase_water_temp(self):
+        current_temp = self.read_register(1701)
+        new_temp = current_temp + 1000
+        assert new_temp <= 8000
+        self.write_register(1701, new_temp)
+        return {'message': 'Water temperature set to ' + str(new_temp)}
+
+    def decrease_water_temp(self):
+        current_temp = self.read_register(1701)
+        new_temp = current_temp - 1000
+        assert new_temp >= 1000
+        self.write_register(1701, new_temp)
+        return {'message': 'Water temperature set to ' + str(new_temp)}
 
     def normalize(self, record, value):
         if record.get('values',False):
@@ -158,6 +189,9 @@ if __name__ == '__main__':
         wst = r['water_set_temp']['value']
         cur.execute('INSERT INTO nilan (humidity, panel_temp, board_temp, condenser_temp, evaporator_temp, intake_temp, inlet_temp, outlet_temp, exhaust_speed, inlet_speed, water_top_temp, water_bottom_temp, status_time, status, running, mode, air_set_temp, water_set_temp, filter_alarm) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', (hum, pat, bot, cdt, evt, itt, ilt, ott, ehs, ils, wtt, wbt, stt, sta, run, mod, ast, wst, fal))
         conn.commit()
+    elif '-w' in sys.argv:
+        t = sys.argv[sys.argv.index('-w')+1]
+        m.set_water_bottom(int(t))
     else:
         r = m.get_realtime_data()
         for k in r:
